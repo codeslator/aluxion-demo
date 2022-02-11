@@ -1,8 +1,8 @@
-export interface MapStateInterface {
+export interface MapState {
   prop: boolean;
 }
 
-function state(): MapStateInterface {
+function state(): MapState {
   return {
       prop: true,
   }

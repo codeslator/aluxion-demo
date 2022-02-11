@@ -1,9 +1,9 @@
 import { GetterTree } from 'vuex';
-import { UsersStateInterface } from './state';
-import { StoreInterface } from '@/store/';
+import { UsersState } from './state';
+import { StoreInterface } from '../../index';
 
 
-const getters: GetterTree<UsersStateInterface, StoreInterface> = {
+const getters: GetterTree<UsersState, StoreInterface> = {
     someGetter: ( /* state */ ) => {
         // return true;
     }

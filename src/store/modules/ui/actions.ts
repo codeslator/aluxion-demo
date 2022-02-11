@@ -1,10 +1,10 @@
 
 import { ActionTree } from 'vuex';
-import { UsersState } from './state';
+import { UIState } from './state';
 import { StoreInterface } from '../../index';
 
 
-const actions: ActionTree<UsersState, StoreInterface> = {
+const actions: ActionTree<UIState, StoreInterface> = {
     someAction: ( /*{ commit }, payload  */ ) => {
         // a line to prevent linter errors
     }

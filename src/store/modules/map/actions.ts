@@ -1,10 +1,10 @@
 
 import { ActionTree } from 'vuex';
-import { MapStateInterface } from './state';
-import { StoreInterface } from '@/store/';
+import { MapState } from './state';
+import { StoreInterface } from '../../index';
 
 
-const actions: ActionTree<MapStateInterface, StoreInterface> = {
+const actions: ActionTree<MapState, StoreInterface> = {
     someAction: ( /*{ commit }, payload  */ ) => {
         // a line to prevent linter errors
     }

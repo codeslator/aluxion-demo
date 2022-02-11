@@ -1,11 +1,11 @@
 import { Module } from 'vuex';
-import { StoreInterface } from '@/store/';
-import state, { MapState } from './state';
+import { StoreInterface } from '../../index';
+import state, { UIState } from './state';
 import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
 
-const mapModule: Module<MapState, StoreInterface> = {
+const uiModule: Module<UIState, StoreInterface> = {
     namespaced: true,
     actions,
     getters,
@@ -14,4 +14,4 @@ const mapModule: Module<MapState, StoreInterface> = {
 }
 
 
-export default mapModule;
+export default uiModule;

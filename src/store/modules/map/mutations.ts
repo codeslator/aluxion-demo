@@ -1,8 +1,8 @@
 import { MutationTree } from 'vuex';
-import { MapStateInterface } from './state';
+import { MapState } from './state';
 
 
-const mutation: MutationTree<MapStateInterface> = {
+const mutation: MutationTree<MapState> = {
     someMutation: ( /* state: ExampleStateInterface */) => {
         // a line to prevent linter errors
     }

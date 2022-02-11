@@ -1,8 +1,8 @@
-export interface UsersStateInterface {
+export interface UsersState {
   prop: boolean;
 }
 
-function state(): UsersStateInterface {
+function state(): UsersState {
   return {
       prop: true,
   }
