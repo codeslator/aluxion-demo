@@ -1,10 +1,18 @@
+import { User } from "../../../interfaces/users";
+
 export interface UsersState {
-  prop: boolean;
+  users: User[];
+  activeUser?: User;
+  isLoadingUsers: boolean;
+  isUsersReady: boolean;
 }
 
 function state(): UsersState {
   return {
-      prop: true,
+    users: [],
+    activeUser: undefined,
+    isLoadingUsers: false,
+    isUsersReady: false,
   }
 }
 

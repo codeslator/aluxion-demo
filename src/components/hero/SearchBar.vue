@@ -1,10 +1,11 @@
 <template>
-  <div class="relative text-gray-600">
+  <form @submit.prevent="searchStop" class="relative text-gray-600">
     <input
-      type="search"
-      name="serch"
+      type="text"
+      name="search"
       placeholder="Search"
-      class="bg-transparent h-10 px-5 w-full text-sm focus:outline-none rounded"
+      class="bg-transparent h-10 px-5 w-full text-sm text-white focus:outline-none custom-input"
+      v-model="search"
     />
     <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
       <svg
@@ -26,7 +27,25 @@
         />
       </svg>
     </button>
-  </div>
+  </form>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+import useStop from '../../composables/useStop';
+
+const search = ref('')
+
+const { searchStopByStopId } = useStop();
+
+const searchStop = () => {
+  console.log(search.value)
+  searchStopByStopId(parseInt(search.value))
+}
+</script>
+
+<style scoped>
+ .custom-input:hover {
+   border-bottom: 2px solid #fff;
+ }
+</style>

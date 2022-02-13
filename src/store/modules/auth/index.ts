@@ -1,13 +1,13 @@
 import { Module } from 'vuex';
 import { StoreInterface } from '../../index';
-import state, { UIState } from './state';
+import state, { AuthState } from './state';
 import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
 
-export const UINamespace = 'ui/';
+export const AuthNamespace = 'auth/';
 
-const uiModule: Module<UIState, StoreInterface> = {
+const authModule: Module<AuthState, StoreInterface> = {
     namespaced: true,
     actions,
     getters,
@@ -16,4 +16,4 @@ const uiModule: Module<UIState, StoreInterface> = {
 }
 
 
-export default uiModule;
+export default authModule;

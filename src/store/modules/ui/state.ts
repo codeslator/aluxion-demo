@@ -1,10 +1,12 @@
 export interface UIState {
   isMenuActive: boolean;
+  isModalActive: boolean;
 }
 
 function state(): UIState {
   return {
-    isMenuActive: true,
+    isMenuActive: false,
+    isModalActive: false,
   }
 }
 

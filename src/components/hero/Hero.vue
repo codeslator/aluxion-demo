@@ -1,7 +1,7 @@
 <template>
-  <section class="container flex flex-row xs:grid-cols-1 sm:grid-cols-2  gap-4 items-end py-5" id="hero">
+  <section class="flex md:flex-row xs:flex-col gap-4 items-end py-5" id="hero">
     <div class="w-full sm:w-8/12">
-      <h1 class="text-8xl">{{ title }}</h1>
+      <h1 class="xs:text-2xl  lg:text-8xl">{{ title }}</h1>
     </div>
     <div class="w-full sm:w-4/12">
       <search-bar />

@@ -1,5 +1,5 @@
 import { Module } from 'vuex';
-import { StoreInterface } from '@/store/';
+import { StoreInterface } from '../../index';
 import state, { MapState } from './state';
 import actions from './actions';
 import getters from './getters';

@@ -9,7 +9,7 @@
     <span class="sr-only">Open main menu</span>
     <svg
       class="h-6 w-6"
-      :class="isMenuActive ? 'block' : 'hidden'"
+      :class="isMenuActive ? 'hidden' : 'block'"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -24,8 +24,8 @@
       />
     </svg>
     <svg
+      :class="isMenuActive ? 'block' : 'hidden'"
       class="h-6 w-6"
-      :class="isMenuActive ? 'hidden' : 'block'"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

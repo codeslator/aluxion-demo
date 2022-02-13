@@ -1,11 +1,14 @@
 <template>
-  <nav class="transparent-bg">
+  <nav class="bg-transpatent w-full pt-5">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         
         <div
           class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
-        >{{ title }}</div>
+        >
+          <span v-if="title">{{ title }}</span>
+          <img v-else src="../../assets/Aluxion-Web.svg" alt="Aluxion Logo">
+        </div>
         <div
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
@@ -26,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="sm:hidden" id="mobile-menu" v-show="!isMenuActive">
+    <div class="sm:hidden" id="mobile-menu" v-show="isMenuActive">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <nav-item
           v-for="link in links"
@@ -48,13 +51,14 @@ const { isMenuActive } = useUI();
 const { title } = defineProps({
   title: {
     type: String,
-    required: true,
   }
 })
 
 const links = [
-  { to: 'home', name: 'Home' },
-  { to: 'details', name: 'Details' },
+  { to: 'home', name: 'Inicio' },
+  { to: 'details', name: 'Metro' },
+  { to: 'details', name: 'Cercanias' },
+  { to: 'details', name: 'Carshing' },
 ];
 
 </script>
