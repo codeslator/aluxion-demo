@@ -1,10 +1,10 @@
 <template>
   <div class="w-full">
-    <section class="flex md:flex-row xs:flex-col" id="map">
+    <section class="flex md:flex-row xs:flex-col">
       <div class="w-full md:w-6/12 p-4">
         <stops-list />
       </div>
-      <div class="w-full md:w-6/12">
+      <div class="w-full md:w-6/12" id="map">
         <map-view />
       </div>
     </section>

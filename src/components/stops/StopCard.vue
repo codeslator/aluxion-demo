@@ -1,6 +1,5 @@
 <template>
 <div class="grid grid-col">
-
   <div class="w-full flex flex-row justify-start items-center p-3">
     <img src="../../assets/transport.svg" alt="transport-icon" class="mr-3" >
     <p class="text-lg font-bold">Linea {{ line.line }}</p>

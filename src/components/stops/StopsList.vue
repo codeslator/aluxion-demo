@@ -25,7 +25,8 @@
     </div>
   </section>
   <div class="text-center" v-else>
-    <h1>Stop not found</h1>
+    <h1 class="text-2xl font-bold" v-if="isLoadingStop">Cargando Parada...</h1>
+    <h1 class="text-2xl font-bold" v-else>Busca una parada para visualizar el mapa</h1>
   </div>
 </template>
 
@@ -36,7 +37,7 @@ import ListButton from './ListButton.vue';
 import useStop from '../../composables/useStop';
 import { useUI } from '../../composables';
 
-const { isStopReady, stopName, currentLines } = useStop();
+const { isStopReady, stopName, currentLines, isLoadingStop } = useStop();
 const { isGridViewActive } = useUI()
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-center items-center" v-if="!isStopReady">
+  <div class="w-full flex justify-center items-center" v-if="!isStopReady && isLoadingStop">
     <div class="text-center">
       <h3>Please wait...</h3>
       <span>Locating...</span>
@@ -14,8 +14,8 @@ import Mapboxgl from 'mapbox-gl';
 // import 'mapbox-gl/dist/mapbox-gl.css';
 import { useMap, useStop, useLine } from '../../composables';
 
-const { isStopReady, stopCoords, stopName, selectedLine } = useStop();
-const { setMap, isMapReady, setMarkers } = useMap();
+const { isStopReady, isLoadingStop, stopCoords, stopName } = useStop();
+const { setMap, setMarkers } = useMap();
 const { lineStops, isIsLineStopsReady } = useLine();
 
 const mapElement = ref<HTMLDivElement>();

@@ -39,7 +39,7 @@
               v-for="link in links"
               :key="link.to"
               :link="link"
-              :classes="'text-white block px-3 py-2 rounded-md text-base font-medium'"
+              :classes="'text-white block px-3 py-2 rounded-md text-base font-medium text-center'"
             />
           </template>
           <template v-else>

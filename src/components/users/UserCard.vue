@@ -1,5 +1,5 @@
 <template>
-  <div class="group relative" @click="selectUser(user)">
+  <div class="group relative cursor-pointer" @click="selectUser(user)">
     <div
       class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-52 lg:aspect-none"
       
