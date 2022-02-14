@@ -19,7 +19,7 @@ const useUser = () => {
   })
 
   return {
-    users: computed(() => store.getters[UserGetters.USERS]),
+    users: computed<User[]>(() => store.getters[UserGetters.USERS]),
     activeUser: computed(() => store.getters[UserGetters.ACTIVE_USER]),
     setActiveUser: (user: User | undefined) => store.commit(`${UserNamespace}${UserMutations.SET_ACTIVE_USER}`, user),
   };

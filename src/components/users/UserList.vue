@@ -9,6 +9,7 @@
         v-for="(user, index) in users" 
         :user="user"
         :key="index"
+        @click="selectUser(user)"
       />
     </div>
     <modal />
@@ -19,7 +20,14 @@
 <script setup lang="ts">
 import Modal from '../modal/Modal.vue'
 import UserCard from './UserCard.vue';
-import useUser from '../../composables/useUser';
+import { useUser, useUI } from '../../composables';
+import { User } from '../../interfaces/users';
 
-const { users } = useUser();
+const { users, setActiveUser } = useUser();
+const { toggleModal } = useUI();
+
+const selectUser = (user: User) => {
+  setActiveUser(user);
+  toggleModal();
+}
 </script>

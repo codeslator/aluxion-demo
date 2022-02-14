@@ -1,5 +1,5 @@
 <template>
-  <div class="group relative cursor-pointer" @click="selectUser(user)">
+  <div class="group relative cursor-pointer">
     <div
       class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-52 lg:aspect-none"
       
@@ -26,9 +26,6 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import useUser from '../../composables/useUser';
-import { User } from '../../interfaces/users';
-import useUI from '../../composables/useUI';
 
 const props = defineProps({
   user: {
@@ -36,9 +33,6 @@ const props = defineProps({
     required: true,
   }
 });
-
-const { setActiveUser } = useUser();
-const { toggleModal } = useUI();
 
 const fullName = computed<string>(() => {
   return `${props.user.name.first} ${props.user.name.last}`;
@@ -48,10 +42,4 @@ const imagePath = computed<string>(() => props.user.picture.large);
 const description = computed<string>(() => {
   return `${props.user.nat.toUpperCase()} | ${props.user.email}`;
 });
-
-const selectUser = (user: User) => {
-  setActiveUser(user);
-  toggleModal();
-
-}
 </script>
