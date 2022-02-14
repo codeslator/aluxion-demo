@@ -1,10 +1,10 @@
 <template>
-  <form @submit.prevent="searchStop" class="relative text-gray-600">
+  <form @submit.prevent="searchStop" class="relative bg-transparent text-gray-600">
     <input
       type="text"
       name="search"
       placeholder="Search"
-      class="bg-transparent h-10 px-5 w-full text-sm text-white focus:outline-none custom-input"
+      class="bg-transparent h-10 px-5 w-full text-sm text-white focus:outline-none focus:bg-transparent active:bg-transparent custom-input"
       v-model="search"
     />
     <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
@@ -39,7 +39,6 @@ const search = ref('')
 const { searchStopByStopId } = useStop();
 
 const searchStop = () => {
-  console.log(search.value)
   searchStopByStopId(parseInt(search.value))
 }
 </script>

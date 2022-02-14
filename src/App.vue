@@ -1,6 +1,6 @@
 <template>
   <navbar />
-  <main class="p-3 sm:mx-auto w-full md:w-11/12">
+  <main class="w-full">
     <router-view></router-view>
   </main>
 </template>

@@ -17,6 +17,8 @@ export interface User {
   phone:   string;
   picture: Picture;
   nat:     string;
+  aluxionToHomeStop: number;
+  homeToAluxionStop: number;
 }
 
 export interface Name {

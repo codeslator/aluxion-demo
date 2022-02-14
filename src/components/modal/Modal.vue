@@ -10,31 +10,8 @@
     <div
       class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
     >
-      <!--
-      Background overlay, show/hide based on modal state.
-
-      Entering: "ease-out duration-300"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "ease-in duration-200"
-        From: "opacity-100"
-        To: "opacity-0"
-      -->
-      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
-      <!-- This element is to trick the browser into centering the modal contents. -->
+      <div class="fixed inset-0 bg-aluxion-blue-opacity transition-opacity" aria-hidden="true"></div>
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-      <!--
-      Modal panel, show/hide based on modal state.
-
-      Entering: "ease-out duration-300"
-        From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-        To: "opacity-100 translate-y-0 sm:scale-100"
-      Leaving: "ease-in duration-200"
-        From: "opacity-100 translate-y-0 sm:scale-100"
-        To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-      -->
       <div
         class="inline-block align-center rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full"
       >
@@ -60,11 +37,17 @@
           <button
             type="button"
             class="inline-flex justify-center rounded-3xl border border-transparent shadow-sm px-4 py-2 bg-aluxion-blue text-base font-medium text-white sm:ml-3 sm:w-auto sm:text-sm"
-          >Casa</button>
+            @click="goToHomeFromAluxion"
+          >
+            Casa
+          </button>
           <button
             type="button"
             class="inline-flex justify-center rounded-3xl border border-transparent shadow-sm px-4 py-2 bg-aluxion-blue text-base font-medium text-white sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-          >Aluxion</button>
+            @click="goToAluxionFromHome"
+          >
+            Aluxion
+          </button>
         </div>
       </div>
     </div>
@@ -73,19 +56,38 @@
 
 <script setup lang="ts">
 import ModalButton from './ModalButton.vue';
-import useUI from '../../composables/useUI';
-import useUser from '../../composables/useUser';
+import { useUI, useUser, useStop } from '../../composables';
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
 const { isModalActive } = useUI();
 const { activeUser } = useUser();
+const  { searchStopByStopId } = useStop();
 
-const firstName = computed(() => activeUser.value ? activeUser.value.name.first : '')
+const firstName = computed(() => activeUser.value ? activeUser.value.name.first : '');
+
+const goToAluxionFromHome = () => {
+  searchStopByStopId(activeUser.value.aluxionToHomeStop);
+  router.push({ name: 'details' });
+}
+
+const goToHomeFromAluxion = () => {
+  searchStopByStopId(activeUser.value.aluxionToHomeStop);
+  router.push({ name: 'details' });
+}
 </script>
 
 <style scoped>
 .bg-aluxion-blue {
   background-color: #081c53;
 }
+
+.bg-aluxion-blue-opacity {
+  background-color: rgba(8, 28, 83, .75);
+}
+
 
 .text-aluxion-blue {
   color: #081c53;

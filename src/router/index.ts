@@ -11,6 +11,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/details',
     name: 'details',
     component: () => import(/* webpackChunkName: "Details" */ '../views/DetailsView.vue')
+  },
+  {
+    path: '/:catchAll(.*)*',
+    component: () => import('../views/NotFoundView.vue')
   }
 ]
 

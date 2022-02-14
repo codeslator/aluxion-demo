@@ -1,8 +1,8 @@
 <template>
-<div class=" w-full">
-  <hero :title="'Don\'t be late, aluxioner'" />
-  <user-list v-if="isAuthenticated" />
-</div>
+  <div class="sm:mx-auto  w-full md:w-11/12 p-3">
+    <hero :title="'Don\'t be late, aluxioner'" />
+    <user-list v-if="isAuthenticated" />
+  </div>
 </template>
 
 <script setup lang="ts">

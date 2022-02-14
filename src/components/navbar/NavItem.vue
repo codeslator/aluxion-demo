@@ -40,7 +40,7 @@ const route = computed(() => {
 
 <style scoped>
 .is-active {
-  color: #42b983;
+  color: #fff;
 }
 
 .normal-link {

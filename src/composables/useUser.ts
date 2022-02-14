@@ -14,7 +14,7 @@ const useUser = () => {
 
   onMounted(() => {
     if(!store.getters[UserGetters.IS_LOADING_USERS]) {
-      store.dispatch(UserActions.FETCH_USERS, { limit: 5, include: IncludeValues });
+      store.dispatch(UserActions.FETCH_USERS, { limit: 15, include: IncludeValues });
     }
   })
 
